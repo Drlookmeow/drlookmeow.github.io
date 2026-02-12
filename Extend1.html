@@ -10,7 +10,7 @@
             --card-bg: #ffffff;
             --text-main: #333;
             --urgent-red: #c0392b; 
-            --cash-green: #27ae60; /* Green for Cash */
+            --cash-green: #27ae60;
             --header-gradient: linear-gradient(135deg, #2c3e50 0%, #4a4a4a 100%);
         }
 
@@ -103,7 +103,63 @@
         .slogan-box h2 { font-size: 2rem; margin: 0 0 10px 0; font-weight: 800; }
         .slogan-box p { font-size: 1.2rem; opacity: 0.9; margin: 0; }
 
-        /* Map Section (Photo Version) */
+        /* --- Updated Impact Section --- */
+        .impact-section {
+            margin-bottom: 3rem;
+        }
+        
+        .impact-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .impact-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjusted width for smaller items */
+            gap: 15px;
+        }
+
+        .impact-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .impact-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--cash-green);
+        }
+
+        .amount {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--cash-green);
+            margin-bottom: 5px;
+        }
+
+        .impact-desc {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .impact-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Map Section */
         .location-section {
             background: white;
             padding: 2rem;
@@ -117,7 +173,6 @@
 
         .map-wrapper {
             width: 100%;
-            /* Make it taller so the map photo is clear */
             height: auto; 
             margin-top: 15px;
             border-radius: 8px;
@@ -125,19 +180,16 @@
             border: 1px solid #ddd;
         }
 
-        .map-img {
-            width: 100%;
-            display: block;
-        }
+        .map-img { width: 100%; display: block; }
 
-        /* Donation Section (Cash Version) */
+        /* Donation Section */
         .donate-section {
             text-align: center;
             background: white;
             padding: 3rem 1rem;
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            border-top: 4px solid var(--cash-green); /* Green top border */
+            border-top: 4px solid var(--cash-green);
         }
 
         .btn-donate {
@@ -155,7 +207,6 @@
         }
         .btn-donate:hover { opacity: 0.85; }
 
-        /* Green button for Cash */
         .btn-cash { background-color: var(--cash-green); } 
 
         .back-link {
@@ -169,6 +220,7 @@
         @media (max-width: 600px) {
             .btn-donate { width: 100%; box-sizing: border-box; }
             .slogan-box h2 { font-size: 1.5rem; }
+            .impact-list { grid-template-columns: 1fr 1fr; } /* 2 columns on phone */
         }
     </style>
 </head>
@@ -226,6 +278,37 @@
             <p>您的援手，是我們改變命運的唯一機會。</p>
         </div>
 
+        <div class="impact-section">
+            <h3 class="impact-title">您的每一分錢都能帶來改變</h3>
+            <div class="impact-list">
+                
+                <div class="impact-item">
+                    <span class="impact-icon">🥫</span>
+                    <span class="amount">$5</span>
+                    <span class="impact-desc"><b>一餐營養罐罐</b><br>讓他們不再挨餓</span>
+                </div>
+
+                <div class="impact-item">
+                    <span class="impact-icon">🥣</span>
+                    <span class="amount">$10</span>
+                    <span class="impact-desc"><b>乾淨的碗</b><br>告別髒亂的報紙</span>
+                </div>
+
+                <div class="impact-item">
+                    <span class="impact-icon">🛏️</span>
+                    <span class="amount">$50</span>
+                    <span class="impact-desc"><b>溫暖睡墊</b><br>度過寒冷的冬天</span>
+                </div>
+
+                <div class="impact-item">
+                    <span class="impact-icon">❤️</span>
+                    <span class="amount" style="font-size: 1.5rem; margin-top:5px;">自定義</span>
+                    <span class="impact-desc"><b>隨心樂助</b><br>聚沙成塔，改善大環境</span>
+                </div>
+
+            </div>
+        </div>
+
         <div class="location-section">
             <h3>📍 我們的位置 (Location)</h3>
             <p style="color:#666; font-size: 0.9rem; margin-bottom: 1rem;">
@@ -248,7 +331,7 @@
             
             <a href="mailto:s24302@wahyan.edu.hk" class="btn-donate btn-cash">📧 聯繫我們安排 (Contact Us)</a>
             
-            </div>
+        </div>
 
         <a href="/" class="back-link">⬅ 返回首頁</a>
 
